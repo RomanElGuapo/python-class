@@ -3,7 +3,7 @@
 '''
 NAME: Conteo de Bases de ADN
 
-VERSION: 2.1
+VERSION: 2.0
 
 AUTHOR: Ángel Román Zamora López
 
@@ -72,7 +72,11 @@ A = C = G = T = 0
 
 # Se abre el archivo de ADN para su procesamiento.
 try:
-    with open(cadena_ADN) as secuencia:
+    with open(cadena_ADN) as raw_text:
+        secuencia = raw_text.readlines()
+        if len(secuencia) == 0:
+            print('Empty file')
+        
         # Se itera sobre cada línea del archivo.
         for linea in secuencia:
             # Se itera sobre cada letra en la línea.
