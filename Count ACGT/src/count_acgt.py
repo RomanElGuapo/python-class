@@ -3,7 +3,7 @@
 '''
 NAME: Conteo de Bases de ADN
 
-VERSION: 2.0
+VERSION: 2.1
 
 AUTHOR: Ángel Román Zamora López
 
@@ -71,31 +71,34 @@ cadena_ADN = args.input_file
 A = C = G = T = 0
 
 # Se abre el archivo de ADN para su procesamiento.
-with open(cadena_ADN) as secuencia:
-    # Se itera sobre cada línea del archivo.
-    for linea in secuencia:
-        # Se itera sobre cada letra en la línea.
-        for letra in linea:
-            # Se incrementa el contador correspondiente a la base de ADN encontrada.
-            if letra.upper() == 'A':
-                A += 1
-            if letra.upper() == 'C': 
-                C += 1
-            if letra.upper() == 'T':
-                T += 1 
-            if letra.upper() == 'G':
-                G += 1
+try:
+    with open(cadena_ADN) as secuencia:
+        # Se itera sobre cada línea del archivo.
+        for linea in secuencia:
+            # Se itera sobre cada letra en la línea.
+            for letra in linea:
+                # Se incrementa el contador correspondiente a la base de ADN encontrada.
+                if letra.upper() == 'A':
+                    A += 1
+                if letra.upper() == 'C': 
+                    C += 1
+                if letra.upper() == 'T':
+                    T += 1 
+                if letra.upper() == 'G':
+                    G += 1
 
-# Se imprime el conteo de la base de ADN especificada por el usuario, si se proporcionó.
-if args.n == 'A':
-    print('Cantidad de A:', A)
-if args.n == 'C':
-    print('Cantidad de C:', C)
-if args.n == 'T':
-    print('Cantidad de T:', T)
-if args.n == 'G':
-    print('Cantidad de G:', G)
+    # Se imprime el conteo de la base de ADN especificada por el usuario, si se proporcionó.
+    if args.n == 'A':
+        print('Cantidad de A:', A)
+    if args.n == 'C':
+        print('Cantidad de C:', C)
+    if args.n == 'T':
+        print('Cantidad de T:', T)
+    if args.n == 'G':
+        print('Cantidad de G:', G)
 
-# Si no se especifica ninguna base de ADN, se imprime el conteo de todas las bases.
-if not args.n:
-    print('Cantidad de A:', A, 'C:', C, 'T:', T, 'G:', G)
+    # Si no se especifica ninguna base de ADN, se imprime el conteo de todas las bases.
+    if not args.n:
+        print('Cantidad de A:', A, 'C:', C, 'T:', T, 'G:', G)
+except:
+    print('Sorry, couldnt find the file')
