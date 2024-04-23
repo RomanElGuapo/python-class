@@ -3,7 +3,7 @@
 '''
 NAME: Conteo de Bases de ADN
 
-VERSION: 2.2
+VERSION: 3.0
 
 AUTHOR: Ángel Román Zamora López
 
@@ -21,7 +21,7 @@ ARGUMENTS:
 
 METHOD:
 
-    El programa utiliza un enfoque de lectura de archivo línea por línea y cuenta las ocurrencias de cada base de ADN (A, C, G, T) en la secuencia.
+    El programa utiliza un enfoque de lectura de archivo línea por línea y cuenta las ocurrencias de cada base de ADN (A, C, G, T) en la secuencia. Además, maneja archivos vacíos y caracteres no válidos.
 
 SEE ALSO:
 
@@ -75,10 +75,12 @@ try:
     with open(cadena_ADN) as raw_text:
         secuencia = raw_text.readlines()
         if len(secuencia) == 0:
-            print('Empty file')
-except:
-    print('Sorry, couldnt find the file')
-        
+            print('Archivo vacío')
+            exit()
+except FileNotFoundError:
+    print('Lo siento, no se pudo encontrar el archivo')
+    exit()
+
 # Se itera sobre cada línea del archivo.
 for linea in secuencia:
     # Se itera sobre cada letra en la línea.
@@ -93,11 +95,8 @@ for linea in secuencia:
         elif letra.upper() == 'G':
             G += 1
         else:
-            try:
-                raise ValueError()
-            except:
-                print('Caracter invalido',letra)
-                exit()
+            print('Carácter no válido:', letra)
+
 # Se imprime el conteo de la base de ADN especificada por el usuario, si se proporcionó.
 if args.n == 'A':
     print('Cantidad de A:', A)
