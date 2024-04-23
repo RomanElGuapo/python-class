@@ -1,28 +1,27 @@
 # Casos de prueba o escenario
 
-Este documento describe los casos de prueba para el script de Python desarrollado para ----lo que se que haga el programa--. El objetivo de estas pruebas es validar y garantizar que el script funciona correctamente y cumple con las especificaciones.
+Este documento describe los casos de prueba para el script de Python desarrollado para contar las bases de ADN presentes en un archivo de secuencia de ADN. El objetivo de estas pruebas es validar y garantizar que el script funciona correctamente y cumple con las especificaciones.
 
 Los casos de prueba se han diseñado teniendo en cuenta las diferentes funcionalidades del script así como los posibles errores que puedan surgir.
 
-El script está diseñado para ----lo que sea que haga el programa---- --- como lo hace----
+El script está diseñado para leer un archivo de secuencia de ADN y contar las ocurrencias de cada base de ADN (A, C, G, T) en la secuencia.
 
 Los casos de prueba cubren las características clave del programa y prueban varias condiciones para garantizar la robustez y fiabilidad del script.
 
 La ejecución exitosa de estos casos de prueba asegura que el script está listo para su uso y puede manejar diferentes condiciones de entrada y situaciones de error.
 
 A continuación, presentamos los detalles de los casos de prueba. Cada caso de prueba incluye una descripción del caso de prueba, los datos de entrada utilizados y el resultado esperado.
-    
-    
-### Caso de prueba 1: Comprobación de ----
 
-- Descripción: Verificar que el script puede ----
-- Datos de entrada: ----
-- Resultado esperado: ---
-- Estado: -----
+### Caso de prueba 1: Comprobación de conteo de bases de ADN
+Descripción: Verificar que el script puede contar correctamente las bases de ADN en un archivo de secuencia.
+Datos de entrada: Archivo de secuencia de ADN con las siguientes bases: AAAACCCGGT
+Resultado esperado: Cantidad de A: 4, Cantidad de C: 3, Cantidad de G: 2, Cantidad de T: 1
+Estado: Éxito
 
-### Caso de prueba 2: Comprobación de error ----
+### Caso de prueba 2: Comprobación de conteo de bases de ADN con entrada vacía
 
-- Descripción: Verificar que el script puede ------
-- Datos de entrada: ---
-- Resultado esperado: ---
-- Estado: ----
+Descripción: Verificar que el script puede manejar adecuadamente un archivo de secuencia de ADN vacío.
+Datos de entrada: Archivo de secuencia de ADN vacío
+Resultado esperado: Cantidad de A: 0, Cantidad de C: 0, Cantidad de G: 0, Cantidad de T: 0
+Estado: Éxito
+
