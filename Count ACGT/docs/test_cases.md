@@ -18,10 +18,16 @@ Datos de entrada: Archivo de secuencia de ADN con las siguientes bases: AAAACCCG
 Resultado esperado: Cantidad de A: 4, Cantidad de C: 3, Cantidad de G: 2, Cantidad de T: 1
 Estado: Éxito
 
-### Caso de prueba 2: Comprobación de conteo de bases de ADN con entrada vacía
+### Caso de prueba 2: Comprobación de error caracter inválido
 
-Descripción: Verificar que el script puede manejar adecuadamente un archivo de secuencia de ADN vacío.
-Datos de entrada: Archivo de secuencia de ADN vacío
-Resultado esperado: Cantidad de A: 0, Cantidad de C: 0, Cantidad de G: 0, Cantidad de T: 0
-Estado: Éxito
+Descripción: Verificar que el script puede manejar adecuadamente un archivo de secuencia de ADN con caracteres inválidos
+Datos de entrada: Archivo de secuencia de ADN con las siguientes bases: AAAACCCGGTN
+Resultado esperado: Error de caracter inválido
+Estado: Fracaso
+
+### Caso de prueba 3: Comprobación de error archivo vacío
+Descripción: Verificar que el script puede manejar adecuadamente un archivo de secuencia de ADN vacío
+Datos de entrada: Archivo de secuencia de ADN con las siguientes bases:
+Resultado esperado: Error de "Empty file"
+Estado: Fracaso
 
